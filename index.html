@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Hot Air Music Festival</title>
+
+	<!-- Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,300%7CMontserrat:700' rel='stylesheet'
+		type='text/css'>
+
+	<!-- Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	<!-- Hot Air Styles -->
+	<link rel="stylesheet" href="ha2020.css" type="text/css" />
+
+	<!-- Mailchimp Styles -->
+	<link href="http://cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+	<style type="text/css">#mc_embed_signup {
+			background: #fff;
+			clear: left;
+			font: 14px;
+		}
+	</style>
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31445224-1']);
+		_gaq.push(['_setDomainName', 'hotairmusicfestival.com']);
+		_gaq.push(['_setAllowLinker', true]);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+<div class="container-fluid" style='padding: 0'>
+
+	<!-- Header -->
+	<header class="container-fluid">
+		<img class='brand' src='images/hot_air_mark3.svg'>
+		<h1 class="logotype">Hot Air Music Festival</h1>
+		<h2 class="location-date"><span data-current-festival-date></span><span class="gy"> San&nbsp;Francisco
+				Conservatory</span></h2>
+	</header>
+
+
+	<!-- Carousel -->
+	<div id="carousel-wrapper" class="closed container-fluid fill" style='padding: 0;'>
+		<div id="haCarousel" class="carousel slide carousel-fade">
+			<ol class="carousel-indicators"></ol>
+			<div class="carousel-inner" role="listbox"> </div>
+			<a class="left carousel-control" href="#haCarousel" role="button" data-slide="prev"><img
+					src='images/arrow-left.svg'></a>
+			<a class="right carousel-control" href="#haCarousel" role="button" data-slide="next"><img
+					src='images/arrow-right.svg'></a>
+		</div>
+	</div>
+
+	<div id='lineup' class='closed container-fluid'>
+		<h1><span data-current-festival-year></span> Lineup</h1>
+	</div>
+
+	<footer id='hafoot' style='position: relative;' class='container-fluid-fluid rev'>
+		<div class='scrim'></div>
+		<div class='flogo'>
+			<h1>Hot Air Music Festival</h1>
+			<h5>New music, new heights.<span style='color: #888888; margin-left: .5rem;'
+					data-current-festival-date></span>
+			</h5>
+			San Francisco Conservatory of Music
+			<br />50 Oak Street
+			<br />San Francisco, CA 94102
+		</div>
+
+		<ul class='linx'>
+			<li><a href='#' class='np' data-toggle="modal" data-target="#about">About</a></li>
+			<li><a href='#' data-toggle="modal" data-target="#festivalhistory">History</a></li>
+			<li><a href='mailto:hotairmusic@gmail.com'>Contact Us</a></li>
+			<li><a href='http://www.facebook.com/HotAirMusicFestival' target='_blank'>Facebook</a></li>
+		</ul>
+	</footer>
+
+
+
+	<!-- MODAL DIALOGS -->
+	<div class="modal fade" id="festivalhistory" tabindex="-1" role="dialog" aria-labelledby="Hot Air Festival History"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Hot Air History</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div id='shorthistory'></div>
+					<div id="history-dropdown" class="dropdown show">
+						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="historyDropdown"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Overview
+						</a>
+
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="nav-link active" href="#" data-historyyear="${i}"
+								data-tabname="#historyoverview">History Overview</a>
+						</div>
+					</div>
+
+					<div id="history-tabs" class="tab-content">
+						<div class="showpane pane" id="historyoverview" data-tabname="historyoverview" role="tabpanel">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- About -->
+	<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="About Hot Air" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">About Hot Air</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="panel-group" id="accordion">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Popup -->
+
+	<style>#popup a {
+			color: red;
+		}
+	</style>
+	  
+	<div class="modal modal-dialog-centered" id="popup" tabindex="-1" aria-labelledby="Welcome to Hot Air"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Hot Air Music Festival 2021</h3>
+					<button type="button" class="close" data-dismiss="modal" onclick="$('#popup').hide()" aria-label="Close">&times;</button>
+				</div>
+				<div class="modal-body">
+
+							<p style='font-size: 18px; text-align: center; line-height: 1.6; color: #777;'>
+								<p>Join us this Sunday, March 7th, 10 AM - 9 PM, PST for the 12th annual Hot Air Music Festival.</p>
+<p>Knowing that this year’s festival would be virtual, the Hot Air team saw an opportunity to expand beyond the Bay Area, program a broader diversity of composers and performers, and share the festival with a global audience. Festival highlights include a MIDI controller in the shape of a sea creature from China, dance music and string suites from Europe, a string quartet from Iran, the stories of immigrant musicians living in New York City, and of course musicians from our own SFCM community.</p>
+<p>Schedule, details, and a link to the festival can be found <a href="https://sfcm.edu/performance-calendar/event/hot-air-music-festival-2021">here</a> or by going to the SFCM Events Calendar.</p>
+<p>Also, check out Hot Air 2021’s pre-festival showcase on <a href="https://www.facebook.com/HotAirMusicFestival">facebook</a>, <a href="https://www.instagram.com/hotairmusicfestival/">instagram</a>, and <a href="https://twitter.com/hotairmusic">twitter</a>.</p>
+							<!-- <div id="mc_embed_signup">
+								<form
+									action="//hotairmusicfestival.us5.list-manage.com/subscribe/post?u=154d91055721e60d43e5876a8&amp;id=c5dfdc0097"
+									method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+									class="validate" target="_blank" novalidate>
+									<div class="mc-field-group">
+										<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"
+											placeholder="Email Address">
+									</div>
+									<div id="mce-responses" class="clear">
+										<div class="response" id="mce-error-response" style="display:none"></div>
+										<div class="response" id="mce-success-response" style="display:none"></div>
+									</div>
+									<div style="position: absolute; left: -5000px;">
+										<input type="text" name="b_154d91055721e60d43e5876a8_a05ff28c3d" value="">
+									</div>
+									<div class="clear">
+										<input type="submit" value="Subscribe" name="subscribe"
+											id="mc-embedded-subscribe" class="button btn btn-success">
+									</div>
+								</form>
+							</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+<script>
+
+	$(document).ready(function () {
+		(async () => {
+
+			var firebaseConfig = {
+				apiKey: "AIzaSyDMbwtCFVGDcRpDOhYNYtQOgU-KW-p66Ms",
+				authDomain: "hotair-18c51.firebaseapp.com",
+				databaseURL: "https://hotair-18c51.firebaseio.com",
+				projectId: "hotair-18c51",
+				storageBucket: "hotair-18c51.appspot.com",
+				messagingSenderId: "707041568884",
+				appId: "1:707041568884:web:b81d85320d4027db2d4921",
+				measurementId: "G-V7YE9XTRTG"
+			}
+
+			firebase.initializeApp(firebaseConfig);
+			const db = firebase.firestore();
+
+			// Setup Defaults
+
+			var configData;
+
+			let rawDoc = await db.collection("settings").doc("config").get();
+			configData = rawDoc.data();
+			$('[data-current-festival-year]').html(configData.festivalYear)
+			$('[data-current-festival-date]').html(configData.festivalReadableDate)
+
+			// Show popup
+
+			if (configData.showPopup) $('#popup').show();
+
+			// Build Carousel
+
+			if (configData.showCarousel) {
+
+				$('#carousel-wrapper').removeClass('closed');
+				const $theContainer = $('#haCarousel .carousel-inner');
+				const $theIndicators = $('#haCarousel ol.carousel-indicators');
+
+				db.collection("carousel").orderBy("rank").get().then(queryResults => {
+					let i = 0, theRef, archive;
+					const currentFestival = Date.parse(configData.festivalReadableDate);
+					queryResults.docs.forEach(record => {
+						theRef = record.data();
+						if (theRef.rank < 10000) {
+							archive = (currentFestival != Date.parse(theRef.date)) ? "archive" : "";
+							sessionDate = (theRef.sess != "") ? theRef.date : `${theRef.date} | ${theRef.session}`;
+							$theContainer.append(`<div class="carousel-item"><div class="carousel-img" style="background-image:url(${theRef.url});"></div>
+						<div class="caption-center"><div class="carousel-caption"><h5 class="${archive}">${sessionDate}</h5><h4>${theRef.title}</h4>${theRef.description}</div></div></div>`);
+							$theIndicators.append('<li data-target="#haCarousel" data-slide-to="' + i + '"></li> ');
+							i++;
+						}
+					})
+
+					$theContainer.children().first().addClass('active');
+					// Randomize first image
+					var d = new Date;
+					var sld = d.getSeconds() % queryResults.length;
+					$theContainer.parent().carousel({ interval: 9000 }).carousel(sld);
+					$('#carousel-wrapper').show();
+				});
+			}
+
+			// Show Lineup
+
+			const getLineup = (lineupYear, location) => db.collection("lineups").doc(lineupYear.toString()).get().then(doc => {
+				$(location).append(doc.data().content)
+			});
+
+			if (configData.showLineup) {
+				getLineup(configData.festivalYear, "#lineup");
+				$("#lineup").removeClass('closed');
+			}
+
+			// Setup Info Texts
+
+			const setSiteText = (doc, location) => db.collection("site-text").doc(doc).get().then(doc => $(location).append(doc.data().content))
+
+			const $theAccordion = $('#accordion');
+			let i = 0;
+			let rec = null;
+			db.collection("site-text").orderBy("rank").get().then(queryResults => {
+				queryResults.docs.forEach(record => {
+					rec = record.data();
+					if (rec.rank < 10000) {
+						$theAccordion.append(`<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse${i}">${rec.title}</a></h4></div><div id="collapse${i}" class="panel-collapse collapse"><div class="panel-body">${rec.content}</div></div></div>`);
+						i++;
+					}
+				})
+			});
+
+			setSiteText("history", "#historyoverview");
+
+			db.collection("teams").doc(configData.festivalYear).get().then(doc => {
+				$('#credits').append(doc.data().content);
+			});
+
+			// Build History
+
+			const thisYear = parseInt(configData.festivalYear);
+			const $historyMenu = $("#history-dropdown .dropdown-menu");
+			const $historyTabs = $("#history-tabs");
+
+			for (let i = 2010; i < thisYear; i++) {
+				$historyMenu.append(`<a class="nav-link active" href="#" data-tabname="#tab${i}" data-toggle="tab">${i}</a>`);
+				$historyTabs.append(`<div id="tab${i}" class="pane" role="tabpanel"></div>`);
+				getLineup(i, `#tab${i}`);
+			}
+
+
+			$("[data-tabname]").click(e => {
+				document.querySelector("#historyDropdown").innerHTML = e.target.innerHTML;
+				document.querySelectorAll('[class~=pane]').forEach(item => item.classList.remove('showpane'));
+				document.querySelector(e.target.dataset.tabname).classList.add('showpane');
+			})
+
+		})();
+
+	});
+
+</script>
+
+</html>
