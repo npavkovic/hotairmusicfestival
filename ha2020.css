@@ -6,6 +6,9 @@ html {
     --hotblue: #6dbad9;
     --hotdark: #0F376E;
     --hotgreen: #6dd9a4;
+}
+
+body {
     background: black;
 }
 
